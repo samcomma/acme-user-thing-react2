@@ -36,11 +36,11 @@ const syncAndSeed = ()=> {
         Thing.create({name: 'bazz'})
       ])
       await Promise.all([
-        UserThing.create({ userId: moe.id, thingId: foo.id}),
-        UserThing.create({ userId: moe.id, thingId: foo.id}),
-        UserThing.create({ userId: larry.id, thingId: bazz.id}),
-        UserThing.create({ userId: larry.id, thingId: foo.id}),
-        UserThing.create({ userId: shep.id, thingId: bar.id})
+        UserThing.create({ userId: moe.id, thingId: foo.id }),
+        UserThing.create({ userId: moe.id, thingId: foo.id }),
+        UserThing.create({ userId: larry.id, thingId: bazz.id }),
+        UserThing.create({ userId: larry.id, thingId: foo.id }),
+        UserThing.create({ userId: shep.id, thingId: bar.id }),
       ])
   })
 }
