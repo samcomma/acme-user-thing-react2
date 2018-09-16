@@ -17,13 +17,19 @@ class App extends Component {
   }
   
   componentDidMount(){
+    //the below 4 lines of code are related to the toggleFiltered function so that it is as responsive and functional as it should be
+    //when pressing the on-screen button on the app. 
+    window.addEventListener('hashchange', ()=> {
+      this.setState({ filtered : window.location.hash === '#filtered' ? true : false })
+    })
+    this.setState({ filtered : window.location.hash === '#filtered' ? true : false })
     axios.get('/api/users')
       .then(response => response.data)
       .then(users => this.setState({ users }))
   }
 
   toggleFiltered() {
-    this.setState({ filtered: !this.state.filtered })
+    window.location.hash = this.state.filtered ? '' : 'filtered'
   }
   
   render() {
