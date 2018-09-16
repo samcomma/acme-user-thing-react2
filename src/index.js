@@ -22,6 +22,8 @@ class App extends Component {
     window.addEventListener('hashchange', ()=> {
       this.setState({ filtered : window.location.hash === '#filtered' ? true : false })
     })
+    //This below line allows that if you have #filtered in the url and copy and paste that in to a new window. 
+    // Then the results that initially pop up will be filtered.
     this.setState({ filtered : window.location.hash === '#filtered' ? true : false })
     axios.get('/api/users')
       .then(response => response.data)
